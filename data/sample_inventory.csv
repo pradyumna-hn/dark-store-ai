@@ -1,0 +1,91 @@
+sku_id,sku_name,store_id,current_stock,reorder_point,max_stock,expiry_days,unit_cost,category
+SKU_001,Full Cream Milk 1L,STORE_A,420,80,420,2,122.4,dairy
+SKU_002,Eggs 12pk,STORE_A,550,70,367,3,87.69,dairy
+SKU_003,Bread White 400g,STORE_A,472,60,315,14,196.62,staples
+SKU_004,Banana 1kg,STORE_A,205,56,294,30,18.04,produce
+SKU_005,Onion 1kg,STORE_A,183,50,262,14,21.83,produce
+SKU_006,Tomato 500g,STORE_A,69,44,231,5,59.03,produce
+SKU_007,Curd 400g,STORE_A,147,40,210,2,52.22,dairy
+SKU_008,Butter 100g,STORE_A,132,36,189,7,98.54,dairy
+SKU_009,Rice 1kg,STORE_A,336,32,168,60,50.52,staples
+SKU_010,Atta 5kg,STORE_A,157,30,157,14,43.96,staples
+SKU_011,Potato 1kg,STORE_A,73,28,147,30,16.25,produce
+SKU_012,Paneer 200g,STORE_A,136,26,136,3,105.21,dairy
+SKU_013,Coconut Oil 1L,STORE_A,126,24,126,180,103.24,staples
+SKU_014,Lays Classic 50g,STORE_A,115,22,115,180,22.77,snacks
+SKU_015,Maggi 2min Noodles,STORE_A,105,20,105,30,25.94,snacks
+SKU_016,Tata Tea 250g,STORE_A,65,18,94,60,37.99,beverages
+SKU_017,Amul Ghee 500ml,STORE_A,42,16,84,1,119.85,dairy
+SKU_018,Biscuits Parle-G 800g,STORE_A,168,16,84,60,94.67,snacks
+SKU_019,Mineral Water 1L,STORE_A,51,14,73,30,64.19,beverages
+SKU_020,Orange Juice 1L,STORE_A,73,14,73,90,57.31,beverages
+SKU_021,Green Tea 25bags,STORE_A,18,12,63,30,44.24,beverages
+SKU_022,Almonds 200g,STORE_A,26,10,52,30,77.1,snacks
+SKU_023,Oats 1kg,STORE_A,104,10,52,180,149.32,staples
+SKU_024,Cheese Slice 200g,STORE_A,52,10,52,30,86.14,dairy
+SKU_025,Sugar 1kg,STORE_A,21,8,42,30,87.42,staples
+SKU_026,Salt 1kg,STORE_A,84,8,42,60,173.3,staples
+SKU_027,Mustard Oil 1L,STORE_A,42,8,42,30,61.0,staples
+SKU_028,Choco Pie 6pk,STORE_A,31,6,31,30,51.68,snacks
+SKU_029,Mango Juice 1L,STORE_A,31,6,31,7,92.04,beverages
+SKU_030,Detergent 500g,STORE_A,46,6,31,14,171.98,staples
+SKU_001,Full Cream Milk 1L,STORE_B,178,68,357,3,56.87,dairy
+SKU_002,Eggs 12pk,STORE_B,218,59,312,7,79.64,dairy
+SKU_003,Bread White 400g,STORE_B,133,51,267,90,84.43,staples
+SKU_004,Banana 1kg,STORE_B,249,47,249,14,27.96,produce
+SKU_005,Onion 1kg,STORE_B,446,42,223,7,17.72,produce
+SKU_006,Tomato 500g,STORE_B,392,37,196,30,65.72,produce
+SKU_007,Curd 400g,STORE_B,124,34,178,1,23.77,dairy
+SKU_008,Butter 100g,STORE_B,160,30,160,7,106.74,dairy
+SKU_009,Rice 1kg,STORE_B,213,27,142,180,199.76,staples
+SKU_010,Atta 5kg,STORE_B,66,25,133,90,121.72,staples
+SKU_011,Potato 1kg,STORE_B,37,23,124,7,44.36,produce
+SKU_012,Paneer 200g,STORE_B,34,22,116,14,99.81,dairy
+SKU_013,Coconut Oil 1L,STORE_B,214,20,107,60,95.95,staples
+SKU_014,Lays Classic 50g,STORE_B,196,18,98,60,16.15,snacks
+SKU_015,Maggi 2min Noodles,STORE_B,62,17,89,60,90.44,snacks
+SKU_016,Tata Tea 250g,STORE_B,80,15,80,60,78.56,beverages
+SKU_017,Amul Ghee 500ml,STORE_B,106,13,71,30,148.04,dairy
+SKU_018,Biscuits Parle-G 800g,STORE_B,35,13,71,30,82.51,snacks
+SKU_019,Mineral Water 1L,STORE_B,62,11,62,60,70.93,beverages
+SKU_020,Orange Juice 1L,STORE_B,62,11,62,90,107.49,beverages
+SKU_021,Green Tea 25bags,STORE_B,53,10,53,90,25.39,beverages
+SKU_022,Almonds 200g,STORE_B,30,8,44,14,55.03,snacks
+SKU_023,Oats 1kg,STORE_B,44,8,44,30,64.99,staples
+SKU_024,Cheese Slice 200g,STORE_B,44,8,44,7,128.03,dairy
+SKU_025,Sugar 1kg,STORE_B,17,6,35,90,99.7,staples
+SKU_026,Salt 1kg,STORE_B,52,6,35,30,68.89,staples
+SKU_027,Mustard Oil 1L,STORE_B,52,6,35,180,86.54,staples
+SKU_028,Choco Pie 6pk,STORE_B,18,5,26,30,23.99,snacks
+SKU_029,Mango Juice 1L,STORE_B,39,5,26,60,63.62,beverages
+SKU_030,Detergent 500g,STORE_B,26,5,26,60,159.49,staples
+SKU_001,Full Cream Milk 1L,STORE_C,441,56,294,14,136.7,dairy
+SKU_002,Eggs 12pk,STORE_C,514,49,257,30,30.53,dairy
+SKU_003,Bread White 400g,STORE_C,330,42,220,60,181.28,staples
+SKU_004,Banana 1kg,STORE_C,205,39,205,14,28.79,produce
+SKU_005,Onion 1kg,STORE_C,128,35,183,3,45.85,produce
+SKU_006,Tomato 500g,STORE_C,48,30,161,14,27.5,produce
+SKU_007,Curd 400g,STORE_C,102,28,147,7,66.82,dairy
+SKU_008,Butter 100g,STORE_C,264,25,132,7,148.41,dairy
+SKU_009,Rice 1kg,STORE_C,175,22,117,90,144.63,staples
+SKU_010,Atta 5kg,STORE_C,220,21,110,60,110.59,staples
+SKU_011,Potato 1kg,STORE_C,102,19,102,7,29.93,produce
+SKU_012,Paneer 200g,STORE_C,95,18,95,14,140.88,dairy
+SKU_013,Coconut Oil 1L,STORE_C,176,16,88,30,114.28,staples
+SKU_014,Lays Classic 50g,STORE_C,80,15,80,60,94.11,snacks
+SKU_015,Maggi 2min Noodles,STORE_C,109,14,73,90,46.96,snacks
+SKU_016,Tata Tea 250g,STORE_C,46,12,66,180,94.5,beverages
+SKU_017,Amul Ghee 500ml,STORE_C,17,11,58,30,114.14,dairy
+SKU_018,Biscuits Parle-G 800g,STORE_C,58,11,58,30,83.16,snacks
+SKU_019,Mineral Water 1L,STORE_C,35,9,51,60,52.15,beverages
+SKU_020,Orange Juice 1L,STORE_C,76,9,51,60,97.38,beverages
+SKU_021,Green Tea 25bags,STORE_C,66,8,44,7,42.35,beverages
+SKU_022,Almonds 200g,STORE_C,18,7,36,90,33.41,snacks
+SKU_023,Oats 1kg,STORE_C,36,7,36,60,110.01,staples
+SKU_024,Cheese Slice 200g,STORE_C,36,7,36,3,90.08,dairy
+SKU_025,Sugar 1kg,STORE_C,29,5,29,180,37.73,staples
+SKU_026,Salt 1kg,STORE_C,29,5,29,90,190.56,staples
+SKU_027,Mustard Oil 1L,STORE_C,20,5,29,14,124.11,staples
+SKU_028,Choco Pie 6pk,STORE_C,22,4,22,90,53.44,snacks
+SKU_029,Mango Juice 1L,STORE_C,15,4,22,90,111.64,beverages
+SKU_030,Detergent 500g,STORE_C,15,4,22,14,107.25,staples
