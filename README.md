@@ -68,10 +68,100 @@ python main.py --help
 
 ---
 
+## 📱 Mobile App
+
+The system ships with a **React Native (Expo)** mobile app that connects to a local FastAPI server and displays forecasts and alerts with a native mobile UI.
+
+### Architecture
+
+```
+Mobile App (Expo/React Native)
+        ↕  HTTP JSON
+FastAPI REST API  (api/main.py)
+        ↕  Python imports
+Forecasting pipeline  (src/)
+        ↕  CSV reads
+Sample data  (data/)
+```
+
+### Step 1 — Start the API server
+
+```bash
+# Install API dependencies
+pip install fastapi "uvicorn[standard]" pandas numpy lightgbm scikit-learn
+
+# Start the server (auto-reload on code changes)
+uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
+```
+
+The API is now live at `http://localhost:8000`.  
+Interactive docs: `http://localhost:8000/docs`
+
+### Step 2 — Run the mobile app
+
+```bash
+cd mobile
+
+# Install JavaScript dependencies
+npm install
+
+# Launch Expo
+npm start
+```
+
+Then:
+- Press **`i`** to open in iOS Simulator  
+- Press **`a`** to open in Android Emulator  
+- Scan the QR code with the **Expo Go** app on a real device  
+
+> ⚠️ **Real device on the same WiFi?** Edit `mobile/src/api/client.ts` and change `localhost` to your machine's local IP address (e.g. `192.168.1.42`).
+
+### Mobile App Screens
+
+| Screen | What it shows |
+|---|---|
+| **Dashboard** | Store selector, method toggle, Run button, summary cards |
+| **Forecast** | Per-SKU demand for the next 7 days |
+| **Alerts** | Expiry risk (HIGH / MEDIUM) + reorder alerts |
+
+### API Endpoints
+
+| Method | Path | Description |
+|---|---|---|
+| `GET` | `/api/health` | Health check |
+| `GET` | `/api/stores` | List available store IDs |
+| `GET` | `/api/report` | Full report as JSON (forecasts + alerts) |
+
+**Example request:**
+```
+GET /api/report?store=STORE_A&method=lgbm&horizon=7&top_n=20
+```
+
+---
+
 ## Project Structure
 
 ```
 dark-store-ai/
+├── api/
+│   ├── main.py                    # FastAPI REST API (mobile backend)
+│   └── requirements.txt           # API-specific dependencies
+├── mobile/
+│   ├── App.tsx                    # React Native app entry + navigation
+│   ├── app.json                   # Expo app config
+│   ├── package.json               # JS dependencies
+│   └── src/
+│       ├── api/client.ts          # Typed API client (fetch)
+│       ├── context/ReportContext.tsx  # Shared state (store, method, report data)
+│       ├── screens/
+│       │   ├── DashboardScreen.tsx    # Summary cards + controls
+│       │   ├── ForecastScreen.tsx     # SKU demand forecast list
+│       │   └── AlertsScreen.tsx       # Expiry risk + reorder alerts
+│       └── components/
+│           ├── SummaryCard.tsx        # Stat card widget
+│           ├── ForecastRow.tsx        # One SKU row with 7-day values
+│           ├── ExpiryAlertItem.tsx    # Expiry risk card
+│           └── ReorderAlertItem.tsx   # Reorder alert card
 ├── data/
 │   ├── generate_data.py           # Script to regenerate synthetic data
 │   ├── sample_orders.csv          # Synthetic order data (6+ months, 10k+ rows)

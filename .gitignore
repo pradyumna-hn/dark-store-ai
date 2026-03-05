@@ -29,3 +29,11 @@ output/*.png
 # IDE
 .vscode/
 .idea/
+
+# Mobile app (React Native / Expo)
+mobile/node_modules/
+mobile/.expo/
+mobile/dist/
+mobile/web-build/
+mobile/android/
+mobile/ios/
