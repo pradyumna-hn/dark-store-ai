@@ -6,6 +6,68 @@ A **functional V1 inventory forecasting system** for quick-commerce dark stores 
 
 ---
 
+## ⚡ Quick Start (under 2 minutes)
+
+> **Requires Python 3.8+**
+
+```bash
+# 1. Clone
+git clone https://github.com/pradyumna-hn/dark-store-ai.git
+cd dark-store-ai
+
+# 2. Install core dependencies (fast path — no Prophet needed)
+pip install pandas numpy lightgbm scikit-learn matplotlib seaborn
+
+# 3. Run! (uses LightGBM — fastest way to get a working report)
+python main.py --method lgbm
+```
+
+That's it. A daily ops report is printed to your terminal **and** saved to `output/daily_report.txt`.
+
+> 💡 **Want Prophet instead?** It's more accurate but requires extra setup — see [Full Installation](#setup--full-installation) below.
+
+---
+
+## 🖥️ All Run Options
+
+```bash
+# Default store (STORE_A), LightGBM, 7-day forecast, top 20 SKUs
+python main.py --method lgbm
+
+# Switch store
+python main.py --store STORE_B --method lgbm
+python main.py --store STORE_C --method lgbm
+
+# Change forecast horizon (e.g. 14 days)
+python main.py --method lgbm --horizon 14
+
+# Analyse fewer SKUs (faster)
+python main.py --method lgbm --top-n 5
+
+# Use Prophet (more accurate, slower to install — see notes below)
+python main.py --method prophet
+
+# Custom data files
+python main.py --orders path/to/orders.csv --inventory path/to/inventory.csv
+
+# Full options reference
+python main.py --help
+```
+
+### CLI Options Reference
+
+| Option | Default | Description |
+|---|---|---|
+| `--store` | `STORE_A` | Store to report on (`STORE_A`, `STORE_B`, `STORE_C`) |
+| `--method` | `prophet` | Forecasting engine: `lgbm` (fast) or `prophet` (accurate) |
+| `--horizon` | `7` | Days ahead to forecast |
+| `--top-n` | `20` | Number of top SKUs to include |
+| `--orders` | `data/sample_orders.csv` | Path to a custom orders CSV |
+| `--inventory` | `data/sample_inventory.csv` | Path to a custom inventory CSV |
+| `--output-dir` | `output/` | Directory to save `daily_report.txt` |
+
+---
+
 ## Project Structure
 
 ```
@@ -32,30 +94,28 @@ dark-store-ai/
 
 ---
 
-## Setup
+## Setup — Full Installation
+
+Install **all** dependencies (including Prophet for best forecast accuracy):
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/pradyumna-hn/dark-store-ai.git
-cd dark-store-ai
-
-# 2. Install dependencies
 pip install -r requirements.txt
+```
 
-# 3. (Optional) Regenerate sample data
+> ⚠️ **Prophet install note:** Prophet needs `cmdstan` (a C++ compiler) which can fail on some machines.
+> If `pip install prophet` errors, try:
+> ```bash
+> pip install pystan==2.19.1.1
+> pip install prophet
+> ```
+> Or use `--method lgbm` — it gives good results without any extra setup.
+
+```bash
+# (Optional) Regenerate the sample data from scratch
 python data/generate_data.py
 
-# 4. Run the full pipeline
-python main.py
-
-# Run for a different store
-python main.py --store STORE_B
-
-# Use LightGBM instead of Prophet
-python main.py --method lgbm
-
-# Full options
-python main.py --store STORE_A --horizon 7 --top-n 20 --method prophet
+# Run with Prophet (best accuracy)
+python main.py --method prophet
 ```
 
 ---
