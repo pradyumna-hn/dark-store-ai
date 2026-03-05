@@ -117,7 +117,7 @@ def _lgbm_forecast(
     ]
 
     df = daily_df.dropna(subset=feature_cols + ["daily_demand"])
-    X = df[feature_cols].values
+    X = df[feature_cols]
     y = df["daily_demand"].values
 
     model = lgb.LGBMRegressor(
@@ -151,7 +151,7 @@ def _lgbm_forecast(
         future_rows.append(row)
 
     future_df = pd.DataFrame(future_rows)
-    X_future = future_df[feature_cols].values
+    X_future = future_df[feature_cols]
     preds = model.predict(X_future).clip(min=0)
 
     std = daily_df["daily_demand"].std()

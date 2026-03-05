@@ -98,7 +98,7 @@ def compute_reorder_alerts(
         sku_orders = orders_df[mask].copy()
 
         if sku_orders.empty:
-            warnings.warn(f"No order history for SKU {sku_id} in {store_id} — skipping reorder calc.")
+            warnings.warn(f"No order history for SKU {sku_id} in {store_id} — skipping reorder point calculation.")
             continue
 
         # Build daily demand series
